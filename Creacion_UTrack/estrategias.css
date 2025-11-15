@@ -1,0 +1,242 @@
+/* RESET GENERAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BASE DEL DOCUMENTO */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Comic Neue", Arial, sans-serif;
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: rgb(16, 43, 66);
+  color: white;
+  padding: 5px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-family: "Comic Neue", cursive;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: rgb(0, 164, 116);
+}
+
+.navbar-links a.active {
+  background-color: rgb(0, 164, 116);
+  color: white;
+}
+
+/* ICONO USUARIO */
+.Toros {
+  height: 70px;
+  width: auto;
+  border-radius: 8px;
+}
+
+/* CONTENIDO PRINCIPAL */
+.content {
+  flex-grow: 1;
+  padding: 60px 100px; /* ← MÁS ESPACIO LATERAL */
+  max-width: 1200px;   /* ← MÁS ANCHO EN PANTALLAS GRANDES */
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.content h1 {
+  text-align: center;
+  color: rgb(16, 43, 66);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.content h4 {
+  color: rgb(0, 164, 116);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
+
+.content ul {
+  list-style-type: disc;
+  margin-left: 50px; /* ← MÁS HACIA ADENTRO */
+  margin-bottom: 15px;
+}
+
+hr {
+  margin: 25px 0;
+  border: none;
+  border-top: 2px solid rgb(16, 43, 66);
+}
+
+/* FOOTER */
+.footer {
+  background-color: rgb(16, 43, 66);
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgb(0, 164, 116);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+
+.footer-links a:hover {
+  color: #d4ffb2;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .content {
+    padding: 40px 25px; /* más angosto en móvil */
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .content h4 {
+    font-size: 18px;
+  }
+
+  .content ul {
+    margin-left: 30px;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 22px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+   .navbar {
+    padding: 12px 10px;
+  }
+
+  /* Hace que todo se centre verticalmente */
+  .navbar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Logo arriba */
+  .logo {
+    height: 55px;
+  }
+
+  /* Links del menú: centrados EN FILA */
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links a {
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+
+  /* Icono Perfil debajo de los botones */
+  .Toros {
+    height: 55px;
+    margin-top: 5px;
+  }
+
+  /* Tamaño de texto del contenido */
+  .content {
+    padding: 15px;
+    text-align: just;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}

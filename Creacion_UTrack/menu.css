@@ -1,0 +1,297 @@
+/* RESET GENERAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BASE */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Comic Neue", Arial, sans-serif;
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: rgb(16, 43, 66);
+  color: white;
+  padding: 5px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-family: "Comic Neue", cursive;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: rgb(0, 164, 116);
+}
+
+.navbar-links a.active {
+  background-color: rgb(0, 164, 116);
+  color: white;
+}
+
+/* ICONO USUARIO */
+.Toros {
+  height: 70px;
+  width: auto;
+  border-radius: 8px;
+}
+
+/* CONTENIDO PRINCIPAL */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: justify;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content h1,
+.content h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content p {
+  line-height: 1.6;
+}
+
+/* CARRUSEL */
+.carrusel {
+  width: 90%;
+  max-width: 1000px;
+  padding-bottom: 56.25%;
+  margin: 40px auto;
+  border-radius: 15px;
+  background-image: url("LOGO.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: banner 10s infinite;
+  display: block;
+  overflow: hidden;
+}
+
+@keyframes banner {
+  0%, 30% {
+    background-image: url("UTCJ.png");
+    opacity: 1;
+  }
+  31%, 33% {
+    opacity: 0.7;
+  }
+  34%, 63% {
+    background-image: url("TOROUNI.png");
+    opacity: 1;
+  }
+  64%, 66% {
+    opacity: 0.7;
+  }
+  67%, 99% {
+    background-image: url("LOGO.png");
+    opacity: 1;
+  }
+}
+
+/* FOOTER */
+.footer {
+  background-color: rgb(16, 43, 66);
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgb(0, 164, 116);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+
+.footer-links a:hover {
+  color: #d4ffb2;
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+/* Tablets y laptops pequeñas */
+@media (max-width: 1024px) {
+  .carrusel {
+    height: 300px;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-links a {
+    font-size: 15px;
+    padding: 4px 8px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .Toros {
+    height: 55px;
+  }
+
+  .content {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .carrusel {
+    width: 95%;
+    height: 250px;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 22px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+  .carrusel {
+    width: 95%;
+    height: 180px;
+    border-width: 1px;
+  }
+   .navbar {
+    padding: 12px 10px;
+  }
+
+  /* Hace que todo se centre verticalmente */
+  .navbar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Logo arriba */
+  .logo {
+    height: 55px;
+  }
+
+  /* Links del menú: centrados EN FILA */
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links a {
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+
+  /* Icono Perfil debajo de los botones */
+  .Toros {
+    height: 55px;
+    margin-top: 5px;
+  }
+
+  /* Tamaño de texto del contenido */
+  .content {
+    padding: 15px;
+    text-align: justify;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
