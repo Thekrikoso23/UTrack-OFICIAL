@@ -17,7 +17,7 @@ body {
 
 /* ==== NAVBAR ==== */
 .navbar {
-  background-color:rgb(16, 43, 66);
+  background-color: rgb(16, 43, 66);
   color: white;
   padding: 5px 30px;
 }
@@ -53,8 +53,8 @@ body {
   border-radius: 8px;
 }
 
-/* ==== MAIN ==== */
-.registro-main {
+/* ==== PERFIL CARD ==== */
+.perfil-main {
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -63,120 +63,88 @@ body {
   padding: 40px 20px;
 }
 
-.registro-contenedor {
+.perfil-card {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 450px;
   padding: 30px;
-  text-align: center;
-}
-
-.registro-contenedor h1 {
-  color: rgb(31, 75, 47);
-  font-size: 26px;
-  margin-bottom: 5px;
-}
-
-.registro-contenedor h3 {
-  color: #eca924;
-  margin-bottom: 20px;
-}
-
-.registro-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
   text-align: left;
 }
 
-.registro-form label {
-  font-weight: bold;
+.perfil-title {
+  text-align: center;
   color: rgb(31, 75, 47);
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.registro-form input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.perfil-subtitle {
+  text-align: center;
+  color: #eca924;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.perfil-info {
+  margin-bottom: 20px;
+}
+
+.perfil-info label {
+  font-weight: bold;
+  color: rgb(31, 75, 47);
   font-size: 16px;
 }
 
-.registro-form button {
+.perfil-info p {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* ==== BOTÓN ==== */
+.boton-salir {
   background-color: rgb(16, 43, 66);
   color: white;
   border: none;
+  width: 100%;
   padding: 12px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
+  text-align: center;
+  display: block;
+  text-decoration: none;
   transition: background-color 0.3s;
 }
 
-.registro-form button:hover {
+.boton-salir:hover {
   background-color: #eca924;
-}
-
-.texto-secundario {
-  margin-top: 15px;
-  color: #333;
-}
-
-.enlace-toros,
-.enlace-olvido {
-  color: rgb(31, 75, 47);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.enlace-toros:hover,
-.enlace-olvido:hover {
-  color:  rgb(50, 59, 56);
-}
-
-/* ==== FOOTER ==== */
-.footer {
-  background-color:rgb(16, 43, 66);
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #eca924;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.footer-links a:hover {
-  color: #d4ffb2;
+  color: black;
 }
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 480px) {
-  .registro-contenedor {
+  .perfil-card {
     width: 90%;
     padding: 20px;
   }
 
-  .registro-contenedor h1 {
+  .perfil-title {
     font-size: 22px;
   }
 
-  .registro-form input {
+  .perfil-info p {
     font-size: 14px;
   }
 
-  .registro-form button {
+  .boton-salir {
     font-size: 14px;
     padding: 10px;
   }

@@ -1,0 +1,183 @@
+/* ==== RESET ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==== BASE ==== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+  background-color:rgb(16, 43, 66);
+  color: white;
+  padding: 5px 30px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  border-radius: 8px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-links a:hover {
+  color: #eca924;
+}
+
+.Toros {
+  height: 60px;
+  border-radius: 8px;
+}
+
+/* ==== MAIN ==== */
+.registro-main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 40px 20px;
+}
+
+.registro-contenedor {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  text-align: center;
+}
+
+.registro-contenedor h1 {
+  color: rgb(31, 75, 47);
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.registro-contenedor h3 {
+  color: #eca924;
+  margin-bottom: 20px;
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.registro-form label {
+  font-weight: bold;
+  color: rgb(31, 75, 47);
+}
+
+.registro-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.registro-form button {
+  background-color: rgb(16, 43, 66);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.registro-form button:hover {
+  background-color: #eca924;
+}
+
+.texto-secundario {
+  margin-top: 15px;
+  color: #333;
+}
+
+.enlace-toros,
+.enlace-olvido {
+  color: rgb(31, 75, 47);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.enlace-toros:hover,
+.enlace-olvido:hover {
+  color:  rgb(50, 59, 56);
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  background-color:rgb(16, 43, 66);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #eca924;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: #d4ffb2;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 480px) {
+  .registro-contenedor {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .registro-contenedor h1 {
+    font-size: 22px;
+  }
+
+  .registro-form input {
+    font-size: 14px;
+  }
+
+  .registro-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

@@ -41,7 +41,7 @@ $nombre_usuario = $_SESSION['usuario'];
     </header>
 
     <main class="content">
-        <h1>¡BIENVENIDO, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
+        <h1>¡BIENVENIDO A UTRACK <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
         <h3>¡Sigue tu camino sin perderte!</h3>
         <p class="content-title ">Enfoque del proyecto:</p>
         <p class="content-text">
@@ -59,9 +59,11 @@ $nombre_usuario = $_SESSION['usuario'];
         <p><strong>Tu historia universitaria comienza aquí. 💚</strong></p>
         <br>
 
+    <div class="carrusel"></div>
+
     </main>
 
-    <div class="carrusel"></div>
+    
 
     <footer class="footer">
         <div class="footer-links">
