@@ -44,7 +44,7 @@ $nombre_usuario = $_SESSION['usuario'];
     <p>Comparte tus experiencias, consejos o avisos con otros estudiantes y mentores.</p>
 
     <!-- Botón para desplegar el formulario -->
-    <button class="toggle-form-btn" onclick="toggleForm()">➕ Crear nueva publicación</button>
+    <button class="toggle-form-btn" onclick="toggleForm()"> Crear nueva publicación</button>
 
     <!-- Formulario desplegable -->
     <div class="form-container" id="formContainer">
@@ -76,15 +76,9 @@ $nombre_usuario = $_SESSION['usuario'];
         <input type="text" placeholder="Ej. Reunión de mentoría">
 
         <label>Descripción:</label>
-        <textarea placeholder="Escribe aquí tu publicación..." rows="4"></textarea>
+        <textarea rows="4"></textarea>
 
-        <label>Imagen:</label>
-        <input type="file" accept="image/*">
-
-        <label>Fecha:</label>
-        <input type="date">
-
-        <button type="submit" class="btn-publicar">📢 Publicar</button>
+        <button type="submit" class="btn-publicar">Publicar</button>
       </form>
     </div>
 
