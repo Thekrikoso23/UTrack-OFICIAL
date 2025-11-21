@@ -11,6 +11,7 @@ html, body {
   width: 100%;
 }
 
+/* BODY */
 body {
   font-family: "Comic Neue", Arial, sans-serif;
   font-size: 18px;
@@ -86,11 +87,6 @@ body {
   margin: 0 auto;
 }
 
-.content > p {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 h1 {
   text-align: center;
   margin-bottom: 10px;
@@ -139,74 +135,103 @@ h1 {
   font-size: 16px;
 }
 
-.btn-publicar {
-  background-color: rgb(0,164,116);
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-publicar:hover {
-  background-color: rgb(16,43,66);
-}
-
-/* ==== PUBLICACIONES COMPACTAS ==== */
+/* ==== PUBLICACIONES DISEÑO PREMIUM ==== */
 .posts-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;        /* espacio entre tarjetas */
+  gap: 25px;
   max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
+  margin: 30px auto;
+  padding-bottom: 40px;
 }
 
+/* Tarjeta principal */
 .post {
-  background-color: white;
-  padding: 12px;    /* tarjeta más pequeña */
-  border-radius: 10px;
-  border-left: 4px solid rgb(0,164,116);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: pre-wrap !important;
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 18px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-/* TÍTULO */
-.post h3 {
-  font-size: 18px;
+.post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* HEADER */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.post-avatar {
+  width: 45px;
+  height: 45px;
+  background-color: rgb(0,164,116);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.25);
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-meta .name {
+  font-size: 15px;
   font-weight: 800;
-  margin-bottom: 2px;     /* Título pegado */
   color: rgb(16,43,66);
-  text-align: left;
 }
 
-/* METADATOS (Publicado por y Edificio) */
-.post p {
-  margin: 1px 0 !important;    /* casi nada de espacio */
-  font-size: 14px;
-  line-height: 1.2;
-  text-align: left !important;
-
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: pre-wrap !important;
+.post-meta .date {
+  font-size: 13px;
+  color: #444;
 }
 
-/* DESCRIPCIÓN */
+.post h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(16,43,66);
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+.post-divider {
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  margin: 12px 0;
+}
+
+.post-badge {
+  display: inline-block;
+  background: rgb(0,164,116);
+  padding: 5px 14px;
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .post-content {
-  margin-top: 2px !important;  /* casi pegado */
-  font-size: 14px !important;
-  line-height: 1.3;
-
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: pre-wrap !important;
+  font-size: 15px !important;
+  color: #333;
+  line-height: 1.5;
+  margin-top: 10px !important;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
-
 
 /* FOOTER */
 .footer {
@@ -221,7 +246,6 @@ h1 {
 .footer-links {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 25px;
   flex-wrap: wrap;
 }
@@ -250,30 +274,22 @@ h1 {
     gap: 10px;
   }
 
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
+  .post {
+    padding: 18px;
+    border-radius: 15px;
   }
 
-  .navbar-links a {
-    font-size: 15px;
-    padding: 4px 8px;
+  .post-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
   }
 
-  .logo {
-    height: 50px;
+  .post h3 {
+    font-size: 18px;
   }
 
-  .Toros {
-    height: 55px;
-  }
-
-  .content {
-    padding: 15px;
-    text-align: center;
-  }
-
-  .footer-links a {
-    font-size: 15px;
+  .post-content {
+    font-size: 14px !important;
   }
 }
