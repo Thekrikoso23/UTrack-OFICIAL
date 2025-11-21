@@ -91,13 +91,32 @@ $posts = $postSQL->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 
     <?php foreach ($posts as $p): ?>
-      <article class="post">
-        <h3><?= htmlspecialchars($p["titulo"]) ?></h3>
-        <p><strong>Publicado por:</strong> <?= $p["nombre_usuario"] ?> – <?= $p["fecha_publicacion"] ?></p>
-        <p><strong>Edificio:</strong> <?= $p["codigo"] ?></p>
-       <p class="post-content"><?= nl2br(htmlspecialchars($p["descripcion"])) ?></p>
-      </article>
-    <?php endforeach; ?>
+  <article class="post">
+
+    <div class="post-header">
+      <div class="post-avatar">
+        <?= strtoupper(substr($p["nombre_usuario"], 0, 1)) ?>
+      </div>
+
+      <div class="post-meta">
+        <span class="name"><?= htmlspecialchars($p["nombre_usuario"]) ?></span>
+        <span class="date"><?= $p["fecha_publicacion"] ?></span>
+      </div>
+    </div>
+
+    <h3><?= htmlspecialchars($p["titulo"]) ?></h3>
+
+    <span class="post-badge">Edificio <?= $p["codigo"] ?></span>
+
+    <div class="post-divider"></div>
+
+    <p class="post-content">
+      <?= nl2br(htmlspecialchars($p["descripcion"])) ?>
+    </p>
+
+  </article>
+<?php endforeach; ?>
+
 
   </section>
 

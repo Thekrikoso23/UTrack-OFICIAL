@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 class Base {
     private $host = "localhost";
-    private $port = "3307"; 
+    private $port = "3306"; 
     private $db_name = "utrack";
     private $username = "root";
     private $password = "";
