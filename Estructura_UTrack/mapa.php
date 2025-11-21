@@ -7,10 +7,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 }
 
 $nombre_usuario = $_SESSION['usuario'];
-
-// ======================
-//     LEER UBICACIONES
-// ======================
 $db = new Base();
 $conn = $db->conectar();
 

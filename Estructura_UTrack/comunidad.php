@@ -51,7 +51,7 @@ $posts = $postSQL->fetchAll(PDO::FETCH_ASSOC);
       <a href="menu.php">UTrack</a>
       <a href="mapa.php">Mapa</a>
       <a href="comunidad.php" class="active">Comunidad</a>
-      <a href="estrategias.php">Estrategias</a>
+      <a href="estrategias.php">Estrategias de Estudio</a>
     </nav>
 
     <a href="perfil.php"><img src="../Imagener_UTrack/Toros.png" class="Toros"></a>
