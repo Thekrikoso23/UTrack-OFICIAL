@@ -1,6 +1,5 @@
 <?php
 require_once "../php_UTrack/base.php";
-// NO pongas session_start() aquí porque ya está en base.php
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@ require_once "../php_UTrack/base.php";
       <h3>Regístrate</h3>
 
       <form class="registro-form" method="POST" action="../php_UTrack/registro.php">
-        
+
         <label for="nombre_usuario">Nombre:</label>
         <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Ingresa tu nombre" required>
 
@@ -44,6 +43,7 @@ require_once "../php_UTrack/base.php";
 
         <button type="submit">Registrarme</button>
       </form>
+
 
     </div>
   </main>

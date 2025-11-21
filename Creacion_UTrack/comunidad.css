@@ -86,15 +86,15 @@ body {
   margin: 0 auto;
 }
 
+.content > p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 10px;
   color: rgb(16,43,66);
-}
-
-p {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 /* BOTÓN DESPLEGABLE */
@@ -153,28 +153,60 @@ p {
   background-color: rgb(16,43,66);
 }
 
-/* PUBLICACIONES */
+/* ==== PUBLICACIONES COMPACTAS ==== */
 .posts-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;        /* espacio entre tarjetas */
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .post {
   background-color: white;
-  padding: 20px;
+  padding: 12px;    /* tarjeta más pequeña */
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-left: 4px solid rgb(0,164,116);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: pre-wrap !important;
 }
 
+/* TÍTULO */
 .post h3 {
-  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 2px;     /* Título pegado */
   color: rgb(16,43,66);
+  text-align: left;
 }
 
+/* METADATOS (Publicado por y Edificio) */
 .post p {
-  margin-bottom: 8px;
+  margin: 1px 0 !important;    /* casi nada de espacio */
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: left !important;
+
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: pre-wrap !important;
 }
+
+/* DESCRIPCIÓN */
+.post-content {
+  margin-top: 2px !important;  /* casi pegado */
+  font-size: 14px !important;
+  line-height: 1.3;
+
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: pre-wrap !important;
+}
+
 
 /* FOOTER */
 .footer {
@@ -236,85 +268,12 @@ p {
     height: 55px;
   }
 
-  .footer-links {
-    flex-wrap: wrap;
-    gap: 10px;
+  .content {
+    padding: 15px;
+    text-align: center;
   }
 
   .footer-links a {
     font-size: 15px;
   }
-
-  .content {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .content h1 {
-    font-size: 22px;
-  }
-
-  .content h3 {
-    font-size: 18px;
-  }
-
-.carrusel {
-    width: 95%;
-    height: 180px;
-    border-width: 1px;
-  }
-   .navbar {
-    padding: 12px 10px;
-  }
-
-  /* Hace que todo se centre verticalmente */
-  .navbar-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* Logo arriba */
-  .logo {
-    height: 55px;
-  }
-
-  /* Links del menú: centrados EN FILA */
-  .navbar-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar-links a {
-    font-size: 15px;
-    padding: 5px 10px;
-    border-radius: 8px;
-  }
-
-  /* Icono Perfil debajo de los botones */
-  .Toros {
-    height: 55px;
-    margin-top: 5px;
-  }
-
-  /* Tamaño de texto del contenido */
-  .content {
-    padding: 15px;
-    text-align: justify;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  h3 {
-    font-size: 18px;
-  }  
 }
