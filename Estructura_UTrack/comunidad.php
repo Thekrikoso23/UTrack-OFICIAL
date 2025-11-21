@@ -1,119 +1,122 @@
 <?php
 require_once "../php_UTrack/base.php";
 
-if (!isset( $_SESSION["usuario_id"])) {
-    header('Location: menu.php'); 
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: inicio.php');
     exit;
 }
 
+$id_usuario = $_SESSION['usuario_id'];
 $nombre_usuario = $_SESSION['usuario'];
 
+$db = new Base();
+$conn = $db->conectar();
+
+// ======================
+//  LEER UBICACIONES
+// ======================
+$ubicSQL = $conn->prepare("SELECT id_ubicacion, codigo FROM mapa_ubicaciones");
+$ubicSQL->execute();
+$ubicaciones = $ubicSQL->fetchAll(PDO::FETCH_ASSOC);
+
+// ======================
+//  LEER PUBLICACIONES
+// ======================
+$postSQL = $conn->prepare("
+    SELECT p.*, m.codigo, u.nombre_usuario 
+    FROM publicaciones p
+    JOIN mapa_ubicaciones m ON p.id_ubicacion = m.id_ubicacion
+    JOIN usuarios u ON p.id_usuario = u.id_usuario
+    ORDER BY fecha_publicacion DESC
+");
+$postSQL->execute();
+$posts = $postSQL->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comunidad UTrack</title>
+  <title>Comunidad</title>
   <link rel="stylesheet" href="../Creacion_UTrack/comunidad.css">
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="navbar-content">
-      <img src="../Imagener_UTrack/image.png" alt="Logo de UTrack" class="logo">
-      <nav class="navbar-links">
-        <a href="../Estructura_UTrack/menu.php">UTrack</a>
-        <a href="../Estructura_UTrack/mapa.php">Mapa</a>
-        <a href="../Estructura_UTrack/comunidad.php" class="active">Comunidad</a>
-        <a href="../Estructura_UTrack/estrategias.php">Estrategias de Estudio</a>
-      </nav>
-      <div class="navbar-user">
-        <a href="../Estructura_UTrack/perfil.php">
-          <img src="../Imagener_UTrack/Toros.png" alt="Los Toros" class="Toros">
-        </a>
-      </div>
-    </div>
-  </header>
 
-  <!-- MAIN -->
-  <main class="content">
+<header class="navbar">
+  <div class="navbar-content">
+    <img src="../Imagener_UTrack/image.png" class="logo">
 
-    <h1>Comunidad UTrack</h1>
-    <p>Comparte tus experiencias, consejos o avisos con otros estudiantes y mentores.</p>
+    <nav class="navbar-links">
+      <a href="menu.php">UTrack</a>
+      <a href="mapa.php">Mapa</a>
+      <a href="comunidad.php" class="active">Comunidad</a>
+      <a href="estrategias.php">Estrategias</a>
+    </nav>
 
-    <!-- Botón para desplegar el formulario -->
-    <button class="toggle-form-btn" onclick="toggleForm()"> Crear nueva publicación</button>
+    <a href="perfil.php"><img src="../Imagener_UTrack/Toros.png" class="Toros"></a>
+  </div>
+</header>
 
-    <!-- Formulario desplegable -->
-    <div class="form-container" id="formContainer">
-      <form class="post-form">
-        <label>Elige edificio:</label>
-        <select>
-          <option value="">Selecciona un edificio</option>
-          <option>Edificio A </option>
-          <option>Edificio B </option>
-          <option>Edificio C </option>
-          <option>Edificio D </option>
-          <option>Edificio E </option>
-          <option>Edificio F </option>
-          <option>Edificio G </option>
-          <option>Edificio H </option>
-          <option>Edificio I </option>
-          <option>Edificio J </option>
-          <option>Edificio K </option>
-          <option>Edificio L </option>
-          <option>Edificio M </option>
-          <option>Edificio N </option>
-          <option>Edificio O </option>
-        </select>
+<main class="content">
 
-        <label>Nombre del estudiante o profesor:</label>
-        <input type="text" placeholder="Ej. María López">
+  <h1>Comunidad UTrack</h1>
+  <button onclick="toggleForm()" class="toggle-form-btn">Crear publicación</button>
 
-        <label>Título o nombre del post:</label>
-        <input type="text" placeholder="Ej. Reunión de mentoría">
+  <div class="form-container" id="formContainer">
+    <form class="post-form" method="POST" action="../php_UTrack/guardar_publicaciones.php">
 
-        <label>Descripción:</label>
-        <textarea rows="4"></textarea>
+      <label>Edificio:</label>
+      <select name="id_ubicacion" required>
+        <option value="">Selecciona un edificio</option>
+        <?php foreach ($ubicaciones as $u): ?>
+          <option value="<?= $u['id_ubicacion'] ?>">Edificio <?= $u['codigo'] ?></option>
+        <?php endforeach; ?>
+      </select>
 
-        <button type="submit" class="btn-publicar">Publicar</button>
-      </form>
-    </div>
+      <label>Título:</label>
+      <input type="text" name="titulo" required>
 
-    <!-- Publicaciones -->
-    <section class="posts-section">
+      <label>Descripción:</label>
+      <textarea name="descripcion" rows="4" required></textarea>
+
+      <button type="submit">Publicar</button>
+    </form>
+  </div>
+
+  <section class="posts-section">
+
+    <?php if (count($posts) === 0): ?>
+      <p>No hay publicaciones aún. ¡Sé el primero!</p>
+    <?php endif; ?>
+
+    <?php foreach ($posts as $p): ?>
       <article class="post">
-        <h3>📚 Tips de estudio para Ingeniería</h3>
-        <p><strong>Publicado por:</strong> Ana Torres – 22/10/2025</p>
-        <p>Si estás en los primeros cuatrimestres, te recomiendo repasar cálculo con los materiales que compartimos en la biblioteca del Edificio A.</p>
+        <h3><?= htmlspecialchars($p["titulo"]) ?></h3>
+        <p><strong>Publicado por:</strong> <?= $p["nombre_usuario"] ?> – <?= $p["fecha_publicacion"] ?></p>
+        <p><strong>Edificio:</strong> <?= $p["codigo"] ?></p>
+       <p class="post-content"><?= nl2br(htmlspecialchars($p["descripcion"])) ?></p>
       </article>
+    <?php endforeach; ?>
 
-      <article class="post">
-        <h3>☕ Nueva cafetería en el campus</h3>
-        <p><strong>Publicado por:</strong> Carlos Méndez – 21/10/2025</p>
-        <p>¡Ya abrió la nueva cafetería junto al Edificio D! Tienen descuentos para estudiantes UTCJ con credencial vigente.</p>
-      </article>
-    </section>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="https://sise.utcj.edu.mx/" target="_blank">🌐 SISE UTCJ</a>
-      <a href="https://www.facebook.com/SOYUTCJ" target="_blank">📘 Facebook</a>
-      <a href="mailto:contacto@utrack.com">📧 Correo</a>
-    </div>
-  </footer>
+</main>
 
-  <!-- SCRIPT -->
-  <script>
-    function toggleForm() {
-      const form = document.getElementById('formContainer');
-      form.style.display = form.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="https://sise.utcj.edu.mx/">SISE</a>
+    <a href="https://facebook.com/SOYUTCJ">Facebook</a>
+    <a href="mailto:contacto@utrack.com">Correo</a>
+  </div>
+</footer>
+
+<script>
+function toggleForm(){
+  const form = document.getElementById("formContainer");
+  form.style.display = (form.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>

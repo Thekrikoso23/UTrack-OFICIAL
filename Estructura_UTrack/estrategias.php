@@ -2,12 +2,11 @@
 require_once "../php_UTrack/base.php";
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header('Location: menu.php'); 
+    header('Location: inicio.php'); 
     exit;
 }
 
 $nombre_usuario = $_SESSION['usuario'];
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +14,7 @@ $nombre_usuario = $_SESSION['usuario'];
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROYECTO UTrack</title>
+  <title>Estrategias de Estudio - UTrack</title>
   <link rel="stylesheet" href="../Creacion_UTrack/estrategias.css">
 </head>
 
@@ -24,22 +23,25 @@ $nombre_usuario = $_SESSION['usuario'];
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="navbar-content">
-      <img src="../Imagener_UTrack/image.png" alt="Logo de UTrack" class="logo">
+
+      <img src="../Imagener_UTrack/image.png" class="logo">
+
       <nav class="navbar-links">
-        <a href="../Estructura_UTrack/menu.php">UTrack</a>
-        <a href="../Estructura_UTrack/mapa.php">Mapa</a>
-        <a href="../Estructura_UTrack/comunidad.php">Comunidad</a>
-        <a href="../Estructura_UTrack/estrategias.php" class="active">Estrategias de Estudio</a>
+        <a href="menu.php">UTrack</a>
+        <a href="mapa.php">Mapa</a>
+        <a href="comunidad.php">Comunidad</a>
+        <a href="estrategias.php" class="active">Estrategias de Estudio</a>
       </nav>
+
       <div class="navbar-user">
-        <a href="../Estructura_UTrack/perfil.php" title="Perfil">
-          <img src="../Imagener_UTrack/Toros.png" alt="Los Toros" class="Toros">
+        <a href="perfil.php">
+          <img src="../Imagener_UTrack/Toros.png" class="Toros">
         </a>
       </div>
+
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
   <main class="content">
     <h1>🧭 GUÍA UNIVERSITARIA UTCJ</h1>
 
@@ -98,8 +100,8 @@ $nombre_usuario = $_SESSION['usuario'];
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-links">
-      <a href="https://sise.utcj.edu.mx/" target="_blank" rel="noopener noreferrer">🌐 SISE UTCJ</a>
-      <a href="https://www.facebook.com/SOYUTCJ" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+      <a href="https://sise.utcj.edu.mx/">🌐 SISE UTCJ</a>
+      <a href="https://facebook.com/SOYUTCJ">📘 Facebook</a>
       <a href="mailto:contacto@utrack.com">📧 Correo</a>
     </div>
   </footer>

@@ -17,7 +17,7 @@ session_start();
       <img src="../Imagener_UTrack/image.png" alt="Logo UTrack" class="logo">
       <nav class="navbar-links">
         <a class="active" >UTrack</a>
-        <a href=""> <?php echo $_SESSION['usuario']; ?></a>
+       
       </nav>
       <div class="navbar-user">
         <img src="../Imagener_UTrack/Toros.png" alt="Usuario" class="Toros">

@@ -1,14 +1,13 @@
 <?php
-session_start();
 require_once "base.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $nombre = $_POST["nombre_usuario"] ?? "NuevoUsuario";
-    $email = $_POST["correo"] ?? "";
-    $password = $_POST["password"] ?? "";
+    $nombre = trim($_POST["nombre_usuario"] ?? "");
+    $email = trim($_POST["correo"] ?? "");
+    $password = trim($_POST["password"] ?? "");
 
-    if (empty($email) || empty($password)) {
+    if ($nombre === "" || $email === "" || $password === "") {
         echo "<script>alert('Completa todos los campos'); window.history.back();</script>";
         exit;
     }
@@ -17,8 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $db = new Base();
         $conn = $db->conectar();
 
-        // Validar si ya existe
-        $check = $conn->prepare("SELECT id_usuario FROM usuarios WHERE email = :email");
+        $check = $conn->prepare("SELECT id_usuario FROM usuarios WHERE email = :email LIMIT 1");
         $check->bindParam(":email", $email);
         $check->execute();
 
@@ -37,13 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bindParam(":password", $hash);
 
         if ($stmt->execute()) {
-            echo "<script>alert('Usuario registrado correctamente'); window.location.href='../Estructura_UTrack/recuperar.php';</script>";
+            echo "<script>alert('Usuario registrado correctamente'); 
+                  window.location.href='../Estructura_UTrack/inicio.php';</script>";
         } else {
             echo "<script>alert('Error al registrar usuario'); window.history.back();</script>";
         }
 
     } catch (PDOException $e) {
-        echo "<script>alert('Error: " . addslashes($e->getMessage()) . "');</script>";
+        echo "<script>alert('Error interno: " . addslashes($e->getMessage()) . "');</script>";
     }
 }
 ?>

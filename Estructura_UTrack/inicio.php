@@ -27,9 +27,10 @@ require_once "../php_UTrack/base.php";
 
   <main class="registro-main">
     <div class="registro-contenedor">
-      <h1>Eres un Toro?</h1>
-      <h3>Regístrate</h3>
+      <h1>Bienvenido</h1>
+      <h3>Inicia sesión</h3>
 
+      <!-- FORMULARIO DE INICIO DE SESIÓN -->
       <form class="registro-form" method="POST" action="../php_UTrack/login.php">
         
         <label for="correo">Correo:</label>
@@ -38,19 +39,23 @@ require_once "../php_UTrack/base.php";
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
 
-        <button type="submit">Registrarme</button>
+        <button type="submit">Iniciar Sesión</button>
       </form>
 
       <p class="texto-secundario">
-        ¿No eres un Toro y quieres formar parte de nuestra comunidad?
+        ¿No tienes cuenta?
         <br>
-        Presiona la palabra TOROS
+        Presiona aquí para registrarte
         <br>
-        <a href="../Estructura_UTrack/toros.php" class="enlace-toros">TOROS</a>
+        <!-- inicio.php y toros.php están en la misma carpeta -->
+        <a href="toros.php" class="enlace-toros">TOROS</a>
       </p>
 
       <p class="texto-secundario">
-        <a href="../Estructura_UTrack/recuperar.php" class="enlace-olvido">¿Olvidaste tu contraseña?</a>
+        <!-- recuperar.php también está en la misma carpeta -->
+        <a href="recuperar.php" class="enlace-olvido">
+          ¿Olvidaste tu contraseña?
+        </a>
       </p>
     </div>
   </main>

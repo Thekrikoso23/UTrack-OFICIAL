@@ -2,10 +2,9 @@
 require_once "../php_UTrack/base.php";
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header('Location: ../Estructura_UTrack/inicio.php');
+    header('Location: inicio.php');
     exit;
 }
-
 
 $nombre_usuario = $_SESSION['usuario'];
 ?>
@@ -25,25 +24,25 @@ $nombre_usuario = $_SESSION['usuario'];
         <div class="navbar-content">
             <img src="../Imagener_UTrack/image.png" alt="Logo de UTrack" class="logo">
             <nav class="navbar-links">
-                <a href="../Estructura_UTrack/menu.php" class="active">UTrack</a>
-                <a href="../Estructura_UTrack/mapa.php">Mapa</a>
-                <a href="../Estructura_UTrack/comunidad.php">Comunidad</a>
-                <a href="../Estructura_UTrack/estrategias.php">Estrategias de Estudio</a>
+                <!-- Todos estos archivos están en la MISMA carpeta -->
+                <a href="menu.php" class="active">UTrack</a>
+                <a href="mapa.php">Mapa</a>
+                <a href="comunidad.php">Comunidad</a>
+                <a href="estrategias.php">Estrategias de Estudio</a>
             </nav>
 
             <div class="navbar-user">
-                <a href="../Estructura_UTrack/perfil.php" title="Perfil">
+                <a href="perfil.php" title="Perfil">
                     <img src="../Imagener_UTrack/Toros.png" alt="Los Toros" class="Toros">
                 </a>
-                
             </div>
         </div>
     </header>
 
     <main class="content">
-        <h1>¡BIENVENIDO A UTRACK <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
+        <h1>¡BIENVENIDO A UTRACK <?php echo htmlspecialchars($nombre_usuario); ?>!</h1>
         <h3>¡Sigue tu camino sin perderte!</h3>
-        <p class="content-title ">Enfoque del proyecto:</p>
+        <p class="content-title">Enfoque del proyecto:</p>
         <p class="content-text">
             Facilitar la transición de los estudiantes de preparatoria a la vida universitaria en la UTCJ mediante una plataforma interactiva que ofrezca orientación, ubicación, mentoría y comunidad desde el primer día.
         </p>
@@ -59,11 +58,9 @@ $nombre_usuario = $_SESSION['usuario'];
         <p><strong>Tu historia universitaria comienza aquí. 💚</strong></p>
         <br>
 
-    <div class="carrusel"></div>
+        <div class="carrusel"></div>
 
     </main>
-
-    
 
     <footer class="footer">
         <div class="footer-links">
