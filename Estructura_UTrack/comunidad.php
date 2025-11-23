@@ -61,6 +61,12 @@ $posts = $postSQL->fetchAll(PDO::FETCH_ASSOC);
 <main class="content">
 
   <h1>Comunidad UTrack</h1>
+  <?php if (isset($_SESSION['mensaje'])): ?>
+    <div style="background-color: #fdd; color: #a00; border: 1px solid #f00; padding: 10px; margin-bottom: 20px; border-radius: 8px; text-align: center;">
+        <?= htmlspecialchars($_SESSION['mensaje']); ?>
+    </div>
+    <?php unset($_SESSION['mensaje']); ?>
+  <?php endif; ?>
   <button onclick="toggleForm()" class="toggle-form-btn">Crear publicación</button>
 
   <div class="form-container" id="formContainer">
@@ -85,40 +91,48 @@ $posts = $postSQL->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
   <section class="posts-section">
-
-    <?php if (count($posts) === 0): ?>
-      <p>No hay publicaciones aún. ¡Sé el primero!</p>
+    
+  <?php if (count($posts) === 0): ?>
+    <p>No hay publicaciones aún. ¡Sé el primero!</p>
     <?php endif; ?>
-
     <?php foreach ($posts as $p): ?>
-  <article class="post">
+      <article class="post">
+        
+      <div class="post-header">
+        <div class="post-meta-group">
+          <div class="post-avatar">
+            <?= strtoupper(substr($p["nombre_usuario"], 0, 1)) ?>
+          </div>
 
-    <div class="post-header">
-      <div class="post-avatar">
-        <?= strtoupper(substr($p["nombre_usuario"], 0, 1)) ?>
-      </div>
+          <div class="post-meta">
+            <span class="name"><?= htmlspecialchars($p["nombre_usuario"]) ?></span>
+            <span class="date"><?= $p["fecha_publicacion"] ?></span>
+          </div>
+        </div>
 
-      <div class="post-meta">
-        <span class="name"><?= htmlspecialchars($p["nombre_usuario"]) ?></span>
-        <span class="date"><?= $p["fecha_publicacion"] ?></span>
-      </div>
-    </div>
+        <?php if ($p['id_usuario'] == $id_usuario): ?>
+          <form method="POST" action="../php_UTrack/eliminar_publicacion.php" style="margin: 0;">
+            <input type="hidden" name="id_publicacion" value="<?= $p['id_publicacion'] ?>">
+            <button type="submit" class="delete-button">
+              Eliminar
+            </button>
+          </form>
+          <?php endif; ?>
+        </div>
+        
+        <h3><?= htmlspecialchars($p["titulo"]) ?></h3>
 
-    <h3><?= htmlspecialchars($p["titulo"]) ?></h3>
+        <span class="post-badge">Edificio <?= $p["codigo"] ?></span>
 
-    <span class="post-badge">Edificio <?= $p["codigo"] ?></span>
+        <div class="post-divider"></div>
 
-    <div class="post-divider"></div>
-
-    <p class="post-content">
-      <?= nl2br(htmlspecialchars($p["descripcion"])) ?>
-    </p>
-
-  </article>
-<?php endforeach; ?>
-
-
-  </section>
+        <p class="post-content">
+          <?= nl2br(htmlspecialchars($p["descripcion"])) ?>
+        </p>
+      </article>
+      <?php endforeach; ?>
+    
+    </section>
 
 </main>
 
