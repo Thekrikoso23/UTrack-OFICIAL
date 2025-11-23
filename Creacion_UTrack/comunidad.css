@@ -293,3 +293,34 @@ h1 {
     font-size: 14px !important;
   }
 }
+
+.delete-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    justify-content: space-between;
+}
+
+.post-meta-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
