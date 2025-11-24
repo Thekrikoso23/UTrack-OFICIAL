@@ -264,35 +264,46 @@ h1 {
 
 /* RESPONSIVO */
 @media (max-width: 480px) {
+
   .navbar {
-    padding: 10px 15px;
+    padding: 12px 10px;
   }
 
   .navbar-content {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
 
-  .post {
-    padding: 18px;
-    border-radius: 15px;
+  .logo {
+    height: 55px;
   }
 
-  .post-avatar {
-    width: 38px;
-    height: 38px;
-    font-size: 17px;
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    text-align: center;
   }
 
-  .post h3 {
-    font-size: 18px;
+  .navbar-links a {
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 8px;
   }
 
-  .post-content {
-    font-size: 14px !important;
+  .Toros {
+    height: 55px;
+    margin-top: 5px;
   }
 }
+
+
 
 .delete-button {
     background-color: #d9534f;
