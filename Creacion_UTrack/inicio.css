@@ -161,7 +161,6 @@ body {
   color: #d4ffb2;
 }
 
-/* ==== RESPONSIVE ==== */
 @media (max-width: 480px) {
   .registro-contenedor {
     width: 90%;

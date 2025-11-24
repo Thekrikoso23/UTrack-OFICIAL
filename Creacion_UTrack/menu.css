@@ -172,6 +172,73 @@ body {
 /* ===============================
    RESPONSIVO
    =============================== */
+/* ===============================
+   HERO SECTION
+=============================== */
+.hero {
+  width: 100%;
+  padding: 60px 20px;
+  background: linear-gradient(90deg, #2480ba, #102B42, #2480ba);
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  background-color: #00c896;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.hero button:hover {
+  background-color: #009f75;
+}
+
+/* ===============================
+   TARJETAS SIN INTERACCIÓN
+=============================== */
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  background: rgb(207, 207, 207);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 16px;
+}
 
 /* Tablets y laptops pequeñas */
 @media (max-width: 1024px) {
@@ -181,7 +248,7 @@ body {
 }
 
 /* Celulares grandes */
-@media (max-width: 768px) {
+@media (max-width: 799px) {
   .navbar {
     padding: 10px 15px;
   }

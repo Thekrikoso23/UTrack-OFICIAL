@@ -160,20 +160,12 @@ body {
   }
 }
 
-/* PANTALLAS GRANDES */
-@media (min-width: 769px) {
-}
-
-/* CELULAR */
-/* ✅ MODO MÓVIL - NAVBAR IGUALADO A LOS DEMÁS ARCHIVOS */
 @media (max-width: 480px) {
 
-  /* Navbar compacta */
   .navbar {
     padding: 12px 10px;
   }
 
-  /* Hace que todo se centre verticalmente */
   .navbar-content {
     display: flex;
     flex-direction: column;
@@ -182,12 +174,10 @@ body {
     gap: 8px;
   }
 
-  /* Logo arriba */
   .logo {
     height: 55px;
   }
 
-  /* Links del menú: centrados EN FILA */
   .navbar-links {
     display: flex;
     flex-direction: row;
@@ -204,13 +194,11 @@ body {
     border-radius: 8px;
   }
 
-  /* Icono Perfil debajo de los botones */
   .Toros {
     height: 55px;
     margin-top: 5px;
   }
 
-  /* Tamaño de texto del contenido */
   .content {
     padding: 15px;
     text-align: center;
@@ -278,19 +266,15 @@ body {
   border: 0;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .mapa-layout {
+@media (max-width: 799px) {
+.mapa-layout {
     grid-template-columns: 1fr;
   }
 
   .mapa-controles {
     text-align: center;
   }
-  
-}
 
-@media (max-width: 768px) {
 .carrusel {
     width: 95%;
     height: 180px;
@@ -300,7 +284,6 @@ body {
     padding: 12px 10px;
   }
 
-  /* Hace que todo se centre verticalmente */
   .navbar-content {
     display: flex;
     flex-direction: column;
@@ -309,12 +292,10 @@ body {
     gap: 8px;
   }
 
-  /* Logo arriba */
   .logo {
     height: 55px;
   }
 
-  /* Links del menú: centrados EN FILA */
   .navbar-links {
     display: flex;
     flex-direction: row;
@@ -331,13 +312,11 @@ body {
     border-radius: 8px;
   }
 
-  /* Icono Perfil debajo de los botones */
   .Toros {
     height: 55px;
     margin-top: 5px;
   }
 
-  /* Tamaño de texto del contenido */
   .content {
     padding: 15px;
     text-align: center;

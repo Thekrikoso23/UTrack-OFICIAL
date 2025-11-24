@@ -150,7 +150,7 @@ hr {
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .content {
     padding: 40px 25px; /* más angosto en móvil */
   }

@@ -16,6 +16,9 @@ $nombre_usuario = $_SESSION['usuario'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO UTrack</title>
     <link rel="stylesheet" href="../Creacion_UTrack/menu.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -23,8 +26,8 @@ $nombre_usuario = $_SESSION['usuario'];
     <header class="navbar">
         <div class="navbar-content">
             <img src="../Imagener_UTrack/image.png" alt="Logo de UTrack" class="logo">
+
             <nav class="navbar-links">
-                <!-- Todos estos archivos están en la MISMA carpeta -->
                 <a href="menu.php" class="active">UTrack</a>
                 <a href="mapa.php">Mapa</a>
                 <a href="comunidad.php">Comunidad</a>
@@ -39,10 +42,39 @@ $nombre_usuario = $_SESSION['usuario'];
         </div>
     </header>
 
+    <section class="hero">
+        <h1>¡Bienvenido a UTrack <?php echo htmlspecialchars($nombre_usuario); ?>!</h1>
+        <p>Sigue tu camino sin perderte.</p>
+
+        <button onclick="window.location.href='mapa.php'">
+            Explorar mapa
+        </button>
+    </section>
+
+    <section class="info-cards">
+        <div class="card">
+            <i class="fas fa-map fa-2x"></i>
+            <h3>Mapa del campus</h3>
+            <p>Encuentra tu camino con nuestro plano interactivo.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-users fa-2x"></i>
+            <h3>Comunidad</h3>
+            <p>Conéctate con otros estudiantes y recibe apoyo.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-lightbulb fa-2x"></i>
+            <h3>Estrategias de estudio</h3>
+            <p>Mejora tus habilidades con recursos útiles.</p>
+        </div>
+    </section>
+
+    <!-- ==================== TU CONTENIDO ORIGINAL ==================== -->
     <main class="content">
-        <h1>¡BIENVENIDO A UTRACK <?php echo htmlspecialchars($nombre_usuario); ?>!</h1>
-        <h3>¡Sigue tu camino sin perderte!</h3>
-        <p class="content-title">Enfoque del proyecto:</p>
+       <h3>Enfoque del proyecto:</h3>
+       <br>
         <p class="content-text">
             Facilitar la transición de los estudiantes de preparatoria a la vida universitaria en la UTCJ mediante una plataforma interactiva que ofrezca orientación, ubicación, mentoría y comunidad desde el primer día.
         </p>
@@ -58,18 +90,17 @@ $nombre_usuario = $_SESSION['usuario'];
         <p><strong>Tu historia universitaria comienza aquí. 💚</strong></p>
         <br>
 
+        <br>
         <div class="carrusel"></div>
-
     </main>
 
     <footer class="footer">
         <div class="footer-links">
-            <a href="https://sise.utcj.edu.mx/" target="_blank" rel="noopener noreferrer">🌐 SISE UTCJ</a>
-            <a href="https://www.facebook.com/SOYUTCJ" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+            <a href="https://sise.utcj.edu.mx/" target="_blank">🌐 SISE UTCJ</a>
+            <a href="https://www.facebook.com/SOYUTCJ" target="_blank">📘 Facebook</a>
             <a href="mailto:contacto@utrack.com">📧 Correo</a>
         </div>
     </footer>
 
 </body>
-
 </html>
