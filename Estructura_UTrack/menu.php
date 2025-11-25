@@ -73,26 +73,35 @@ $nombre_usuario = $_SESSION['usuario'];
 
     <!-- ==================== TU CONTENIDO ORIGINAL ==================== -->
     <main class="content">
-       <h3>Enfoque del proyecto:</h3>
-       <br>
-        <p class="content-text">
-            Facilitar la transición de los estudiantes de preparatoria a la vida universitaria en la UTCJ mediante una plataforma interactiva que ofrezca orientación, ubicación, mentoría y comunidad desde el primer día.
-        </p>
-        <br>
-        <p>
-            Empezar la universidad puede ser un reto, ¡pero no tienes que hacerlo solo!
-            Aquí encontrarás apoyo, consejos y orientación para adaptarte más rápido a tu nueva etapa, conocer a otros estudiantes y aprovechar al máximo tu experiencia en la UTCJ.
-        </p>
-        <p>
-            Desde cómo moverte por el campus hasta estrategias para rendir mejor en tus clases, UTrack te conecta con la información y las personas que te impulsarán a crecer.
-        </p>
-        <br>
-        <p><strong>Tu historia universitaria comienza aquí. 💚</strong></p>
-        <br>
 
-        <br>
-        <div class="carrusel"></div>
-    </main>
+    <section class="proyecto-card">
+        <h3 class="proyecto-title">📘 Enfoque del proyecto</h3>
+
+        <p class="proyecto-text">
+            Facilitar la transición de los estudiantes de preparatoria a la vida universitaria en la UTCJ mediante una 
+            plataforma interactiva que ofrezca orientación, ubicación, mentoría y comunidad desde el primer día.
+        </p>
+
+        <p class="proyecto-text">
+            Empezar la universidad puede ser un reto, ¡pero no tienes que hacerlo solo! Aquí encontrarás apoyo, consejos y 
+            orientación para adaptarte más rápido a tu nueva etapa, conocer a otros estudiantes y aprovechar al máximo tu 
+            experiencia en la UTCJ.
+        </p>
+
+        <p class="proyecto-text">
+            Desde cómo moverte por el campus hasta estrategias para rendir mejor en tus clases, UTrack te conecta con la 
+            información y las personas que te impulsarán a crecer.
+        </p>
+
+        <p class="proyecto-final">
+            Tu historia universitaria comienza aquí. 💚
+        </p>
+    </section>
+
+    <div class="carrusel"></div>
+
+</main>
+
 
     <footer class="footer">
         <div class="footer-links">

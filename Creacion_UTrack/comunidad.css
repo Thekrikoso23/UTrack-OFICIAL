@@ -93,31 +93,48 @@ h1 {
   color: rgb(16,43,66);
 }
 
-/* BOTÓN DESPLEGABLE */
+/* =========================================
+   BOTÓN DESPLEGABLE (MEJORADO)
+========================================= */
 .toggle-form-btn {
   background-color: rgb(0,164,116);
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
+  border-radius: 10px;
+  padding: 12px 22px;
   font-size: 16px;
   cursor: pointer;
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 10px auto 25px auto;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .toggle-form-btn:hover {
   background-color: rgb(13,111,80);
 }
 
-/* FORMULARIO */
+.toggle-form-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================================
+   FORMULARIO PREMIUM Y MINIMALISTA (NUEVO)
+========================================= */
 .form-container {
   display: none;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 550px;
+  margin: 20px auto 35px auto;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .post-form {
@@ -126,13 +143,59 @@ h1 {
   gap: 12px;
 }
 
+.post-form label {
+  font-weight: bold;
+  color: #102B42;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  display: block;
+}
+
 .post-form input,
 .post-form textarea,
 .post-form select {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
   font-size: 16px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background: #fafafa;
+}
+
+.post-form input:focus,
+.post-form textarea:focus,
+.post-form select:focus {
+  border-color: #00A474;
+  box-shadow: 0 0 6px rgba(0,164,116,0.35);
+  background: white;
+}
+
+.post-form textarea {
+  resize: none;
+}
+
+.post-form button[type="submit"] {
+  margin-top: 15px;
+  padding: 12px 0;
+  background-color: #00A474;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.post-form button[type="submit"]:hover {
+  background-color: #008e5f;
+}
+
+.post-form button[type="submit"]:active {
+  transform: scale(0.97);
 }
 
 /* ==== PUBLICACIONES DISEÑO PREMIUM ==== */
@@ -160,7 +223,7 @@ h1 {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* HEADER */
+/* HEADER (base) */
 .post-header {
   display: flex;
   align-items: center;
@@ -301,37 +364,42 @@ h1 {
     height: 55px;
     margin-top: 5px;
   }
+
+  /* Form en móvil sin romper nada */
+  .form-container {
+    padding: 22px 18px;
+    margin: 15px 10px 30px 10px;
+  }
 }
 
-
-
+/* BOTÓN ELIMINAR */
 .delete-button {
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 5px 10px;
-    font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .delete-button:hover {
-    background-color: #c9302c;
+  background-color: #c9302c;
 }
 
-
+/* HEADER (override para alinear borrar a la derecha) */
 .post-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  justify-content: space-between;
 }
 
 .post-meta-group {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }

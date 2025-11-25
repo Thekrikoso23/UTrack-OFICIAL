@@ -79,7 +79,71 @@ body {
   border-radius: 8px;
 }
 
-/* CONTENIDO PRINCIPAL */
+/* HERO */
+.hero {
+  width: 100%;
+  padding: 60px 20px;
+  background: linear-gradient(90deg, #2480ba, #102B42, #2480ba);
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  background-color: #00c896;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.hero button:hover {
+  background-color: #009f75;
+}
+
+/* TARJETAS */
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  background: rgb(207, 207, 207);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* CONTENIDO GENERAL */
 .content {
   flex-grow: 1;
   display: flex;
@@ -139,6 +203,49 @@ body {
   }
 }
 
+/* =============================================
+   TARJETA MINIMALISTA LINDÍSIMA — ENFOQUE DEL PROYECTO
+============================================= */
+.proyecto-card {
+    max-width: 900px;
+    margin: 40px auto 70px auto;
+    padding: 45px 55px;
+
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.proyecto-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #102B42;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.proyecto-text {
+    font-size: 1.15rem;
+    color: #1d2e40;
+    line-height: 1.75;
+    margin-bottom: 22px;
+}
+
+.proyecto-final {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00A474;
+    margin-top: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 /* FOOTER */
 .footer {
   background-color: rgb(16, 43, 66);
@@ -171,83 +278,13 @@ body {
 
 /* ===============================
    RESPONSIVO
-   =============================== */
-/* ===============================
-   HERO SECTION
 =============================== */
-.hero {
-  width: 100%;
-  padding: 60px 20px;
-  background: linear-gradient(90deg, #2480ba, #102B42, #2480ba);
-  color: white;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 36px;
-  font-weight: bold;
-}
-
-.hero p {
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-.hero button {
-  margin-top: 25px;
-  padding: 12px 25px;
-  border: none;
-  background-color: #00c896;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: .3s;
-}
-
-.hero button:hover {
-  background-color: #009f75;
-}
-
-/* ===============================
-   TARJETAS SIN INTERACCIÓN
-=============================== */
-.info-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  width: 280px;
-  background: rgb(207, 207, 207);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.card h3 {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.card p {
-  margin-top: 10px;
-  font-size: 16px;
-}
-
-/* Tablets y laptops pequeñas */
 @media (max-width: 1024px) {
   .carrusel {
     height: 300px;
   }
 }
 
-/* Celulares grandes */
 @media (max-width: 799px) {
   .navbar {
     padding: 10px 15px;
@@ -286,9 +323,13 @@ body {
     width: 95%;
     height: 250px;
   }
+
+  .proyecto-card {
+      padding: 30px 20px;
+      margin: 25px 10px;
+  }
 }
 
-/* Celulares pequeños */
 @media (max-width: 480px) {
   .content h1 {
     font-size: 22px;
@@ -305,60 +346,52 @@ body {
   .carrusel {
     width: 95%;
     height: 180px;
-    border-width: 1px;
   }
-   .navbar {
+
+  .navbar {
     padding: 12px 10px;
   }
 
-  /* Hace que todo se centre verticalmente */
   .navbar-content {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 8px;
   }
 
-  /* Logo arriba */
   .logo {
     height: 55px;
   }
 
-  /* Links del menú: centrados EN FILA */
   .navbar-links {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    width: 100%;
-    text-align: center;
   }
 
   .navbar-links a {
     font-size: 15px;
     padding: 5px 10px;
-    border-radius: 8px;
   }
 
-  /* Icono Perfil debajo de los botones */
   .Toros {
     height: 55px;
     margin-top: 5px;
   }
 
-  /* Tamaño de texto del contenido */
   .content {
     padding: 15px;
     text-align: justify;
   }
 
-  h1 {
-    font-size: 22px;
+  .proyecto-title {
+      font-size: 1.6rem;
   }
 
-  h3 {
-    font-size: 18px;
+  .proyecto-text {
+      font-size: 1rem;
+  }
+
+  .proyecto-final {
+      font-size: 1.1rem;
   }
 }

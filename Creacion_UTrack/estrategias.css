@@ -14,8 +14,8 @@ html, body {
 body {
   font-family: "Comic Neue", Arial, sans-serif;
   font-size: 18px;
-  background-color: white;
-  color: black;
+  background: linear-gradient(180deg, #eef4f7, #f8fbfc);
+  color: #102B42;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,8 +25,8 @@ body {
 .navbar {
   background-color: rgb(16, 43, 66);
   color: white;
-  padding: 5px 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 10px 30px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.18);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -47,196 +47,198 @@ body {
 
 .navbar-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
 }
 
 .navbar-links a {
   text-decoration: none;
   color: white;
-  font-family: "Comic Neue", cursive;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 5px 10px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 10px;
+  transition: 0.25s ease;
 }
 
-.navbar-links a:hover {
-  background-color: rgb(0, 164, 116);
-}
-
+.navbar-links a:hover,
 .navbar-links a.active {
-  background-color: rgb(0, 164, 116);
-  color: white;
+  background-color: #00A474;
 }
 
 /* ICONO USUARIO */
 .Toros {
   height: 70px;
   width: auto;
-  border-radius: 8px;
+  border-radius: 50%;
+  transition: 0.2s ease;
 }
 
-/* CONTENIDO PRINCIPAL */
+.Toros:hover {
+  transform: scale(1.08);
+}
+
+/* TARJETA PRINCIPAL ULTRA BONITA */
 .content {
   flex-grow: 1;
-  padding: 60px 100px; /* ← MÁS ESPACIO LATERAL */
-  max-width: 1200px;   /* ← MÁS ANCHO EN PANTALLAS GRANDES */
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 45px 55px;
+
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  animation: fadeIn 0.5s ease-out;
+
   text-align: justify;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* TÍTULO PRINCIPAL */
 .content h1 {
   text-align: center;
-  color: rgb(16, 43, 66);
-  margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 2.6rem;
+  color: #0F2A3F;
+  margin-bottom: 18px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
-.content h4 {
-  color: rgb(0, 164, 116);
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+.content h1:hover {
+  transform: scale(1.02);
+  color: #0b3f63;
 }
 
-.content p {
-  margin-bottom: 20px;
-}
-
-.content ul {
-  list-style-type: disc;
-  margin-left: 50px; /* ← MÁS HACIA ADENTRO */
-  margin-bottom: 15px;
-}
-
-hr {
-  margin: 25px 0;
+/* SEPARADOR */
+.content hr {
   border: none;
-  border-top: 2px solid rgb(16, 43, 66);
+  height: 3px;
+  width: 80%;
+  margin: 25px auto;
+  background: #102B42;
+  opacity: 0.3;
+  border-radius: 50px;
+}
+
+/* SUBTÍTULOS */
+.content h4 {
+  color: #00A474;
+  font-size: 1.45rem;
+  margin-top: 35px;
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+}
+
+.content h4:hover {
+  transform: translateX(4px);
+  color: #007f5a;
+}
+
+/* LISTAS ULTRA BONITAS */
+.content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content ul li {
+  margin-bottom: 14px;
+  padding-left: 30px;
+
+  background-image: url("https://cdn-icons-png.flaticon.com/512/545/545682.png");
+  background-size: 18px;
+  background-position: 0 4px;
+  background-repeat: no-repeat;
+
+  transition: 0.2s ease;
+}
+
+.content ul li:hover {
+  transform: translateX(5px);
+}
+
+/* PÁRRAFOS */
+.content p {
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  color: #0f1f2f;
 }
 
 /* FOOTER */
 .footer {
-  background-color: rgb(16, 43, 66);
+  background-color: #102B42;
   color: white;
-  padding: 15px;
-  font-weight: bold;
+  padding: 18px;
   text-align: center;
-  width: 100%;
+  margin-top: 55px;
+  font-size: 16px;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 25px;
-  flex-wrap: wrap;
 }
 
 .footer-links a {
-  color: rgb(0, 164, 116);
-  text-decoration: none;
+  color: #00A474;
+  font-size: 17px;
   font-weight: bold;
-  transition: color 0.3s ease;
-  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #d4ffb2;
+  color: #b8ffd3;
+  transform: scale(1.1);
 }
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .content {
-    padding: 40px 25px; /* más angosto en móvil */
+    padding: 35px 25px;
   }
 
   .content h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .content h4 {
-    font-size: 18px;
-  }
-
-  .content ul {
-    margin-left: 30px;
-  }
-
-  .footer-links a {
-    font-size: 15px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .content h1 {
-    font-size: 22px;
+  .content {
+    padding: 20px;
+    margin: 25px 10px;
   }
 
-  .content h3 {
-    font-size: 18px;
-  }
-
-  .footer-links a {
-    font-size: 15px;
-  }
-
-   .navbar {
-    padding: 12px 10px;
-  }
-
-  /* Hace que todo se centre verticalmente */
   .navbar-content {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+    gap: 10px;
   }
 
-  /* Logo arriba */
-  .logo {
-    height: 55px;
-  }
-
-  /* Links del menú: centrados EN FILA */
   .navbar-links {
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
-    width: 100%;
-    text-align: center;
   }
 
   .navbar-links a {
     font-size: 15px;
-    padding: 5px 10px;
-    border-radius: 8px;
   }
 
-  /* Icono Perfil debajo de los botones */
-  .Toros {
-    height: 55px;
-    margin-top: 5px;
-  }
-
-  /* Tamaño de texto del contenido */
-  .content {
-    padding: 15px;
-    text-align: just;
-  }
-
-  h1 {
+  .content h1 {
     font-size: 22px;
   }
 
-  h3 {
+  .content h4 {
     font-size: 18px;
   }
 }
