@@ -18,7 +18,7 @@ $usrSQL->execute();
 $usuario = $usrSQL->fetch(PDO::FETCH_ASSOC);
 
 // OBTENER DATOS ACADÉMICOS
-$perSQL = $conn->prepare("SELECT carrera, semestre FROM perfil_usuario WHERE id_usuario = :id");
+$perSQL = $conn->prepare("SELECT carrera, cuatrimestre FROM perfil_usuario WHERE id_usuario = :id");
 $perSQL->bindParam(":id", $id_usuario);
 $perSQL->execute();
 $perfil = $perSQL->fetch(PDO::FETCH_ASSOC);
@@ -75,8 +75,8 @@ $perfil = $perSQL->fetch(PDO::FETCH_ASSOC);
       </div>
 
       <div class="perfil-info">
-        <label>Semestre:</label>
-        <p><?= htmlspecialchars($perfil["semestre"]) ?></p>
+        <label>Cuatrimestre:</label>
+        <p><?= htmlspecialchars($perfil["cuatrimestre"]) ?></p>
       </div>
 
     <?php else: ?>
@@ -102,15 +102,15 @@ $perfil = $perSQL->fetch(PDO::FETCH_ASSOC);
     </div>
 
     <div class="perfil-info">
-      <label for="semestre">Semestre:</label>
-      <select name="semestre" required>
-        <option value="">Selecciona tu semestre</option>
+      <label for="cuatrimestre">Cuatrimestre:</label>
+      <select name="cuatrimestre" required>
+        <option value="">Selecciona tu cuatrimestre</option>
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
         <option>5</option>
-        <option>6</option>
+        <option>6 (Estadia)</option>
       </select>
     </div>
 
