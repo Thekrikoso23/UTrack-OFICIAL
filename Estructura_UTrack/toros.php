@@ -16,7 +16,9 @@ require_once "../php_UTrack/base.php";
     <div class="navbar-content">
       <img src="../Imagener_UTrack/image.png" alt="Logo UTrack" class="logo">
       <nav class="navbar-links">
+        <span class="logo-contenedor">
         <a class="active">UTrack</a>
+        </span>
       </nav>
       
       <div class="navbar-user">
