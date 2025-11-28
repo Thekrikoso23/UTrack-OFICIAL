@@ -7,8 +7,16 @@
 
 /* ==== BASE ==== */
 body {
+  background-image:  linear-gradient(
+    45deg, 
+        rgba(255, 255, 255, 1),      
+        rgba(16, 43, 66, 0.2)
+  ),
+  url('../Imagener_UTrack/UT.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
   color: #222;
   display: flex;
   flex-direction: column;
@@ -41,8 +49,14 @@ body {
 .navbar-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 900px;
+  font-size: 32px;
+  font-family: monospace;
+  
+  
 }
+
+
 
 .navbar-links a:hover {
   color: #eca924;
@@ -59,7 +73,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
   padding: 40px 20px;
 }
 
