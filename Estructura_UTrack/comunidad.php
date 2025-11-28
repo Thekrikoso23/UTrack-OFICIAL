@@ -8,20 +8,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
 $id_usuario = $_SESSION['usuario_id'];
 $nombre_usuario = $_SESSION['usuario'];
-
 $db = new Base();
 $conn = $db->conectar();
-
-// ======================
-//  LEER UBICACIONES
-// ======================
 $ubicSQL = $conn->prepare("SELECT id_ubicacion, codigo FROM mapa_ubicaciones");
 $ubicSQL->execute();
 $ubicaciones = $ubicSQL->fetchAll(PDO::FETCH_ASSOC);
-
-// ======================
-//  LEER PUBLICACIONES
-// ======================
 $postSQL = $conn->prepare("
     SELECT p.*, m.codigo, u.nombre_usuario 
     FROM publicaciones p
