@@ -110,10 +110,12 @@ $posts = $postSQL->fetchAll(PDO::FETCH_ASSOC);
           </form>
           <?php endif; ?>
         </div>
+
+        <span class="post-badge">Edificio <?= $p["codigo"] ?></span>
         
         <h3><?= htmlspecialchars($p["titulo"]) ?></h3>
 
-        <span class="post-badge">Edificio <?= $p["codigo"] ?></span>
+      
 
         <div class="post-divider"></div>
 

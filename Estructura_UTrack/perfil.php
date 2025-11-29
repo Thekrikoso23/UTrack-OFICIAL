@@ -7,17 +7,12 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 }
 
 $id_usuario = $_SESSION['usuario_id'];
-
 $db = new Base();
 $conn = $db->conectar();
-
-// OBTENER DATOS DE USUARIO
 $usrSQL = $conn->prepare("SELECT * FROM usuarios WHERE id_usuario = :id");
 $usrSQL->bindParam(":id", $id_usuario);
 $usrSQL->execute();
 $usuario = $usrSQL->fetch(PDO::FETCH_ASSOC);
-
-// OBTENER DATOS ACADÉMICOS
 $perSQL = $conn->prepare("SELECT carrera, cuatrimestre FROM perfil_usuario WHERE id_usuario = :id");
 $perSQL->bindParam(":id", $id_usuario);
 $perSQL->execute();
@@ -123,6 +118,7 @@ $perfil = $perSQL->fetch(PDO::FETCH_ASSOC);
     <?php endif; ?>
 
     <a href="../php_UTrack/logout.php" class="boton-salir">Cerrar sesión</a>
+    <a class="boton-guardar" href="editar_perfil.php">Editar perfil</a>
 
   </div>
 

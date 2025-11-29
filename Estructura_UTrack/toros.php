@@ -12,19 +12,7 @@ require_once "../php_UTrack/base.php";
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="navbar-content">
-      <img src="../Imagener_UTrack/image.png" alt="Logo UTrack" class="logo">
-      <nav class="navbar-links">
-        <span class="logo-contenedor">
-        <a class="active">UTrack</a>
-        </span>
-      </nav>
-      
-      <div class="navbar-user">
-        <img src="../Imagener_UTrack/Toros.png" alt="Usuario" class="Toros">
-      </div>
-    </div>
+  <header>
   </header>
 
   <main class="registro-main">
@@ -49,13 +37,5 @@ require_once "../php_UTrack/base.php";
 
     </div>
   </main>
-
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="https://sise.utcj.edu.mx/" target="_blank">🌐 SISE UTCJ</a>
-      <a href="https://www.facebook.com/SOYUTCJ" target="_blank">📘 Facebook</a>
-      <a href="mailto:contacto@utrack.com">📧 Correo</a>
-    </div>
-  </footer>
 </body>
 </html>
