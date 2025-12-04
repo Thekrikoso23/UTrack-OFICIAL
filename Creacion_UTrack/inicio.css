@@ -81,10 +81,13 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px;
+  max-width: 650px;   /* o el valor que tengas */
   padding: 30px;
   text-align: center;
+
+  position: relative; /* ⬅️ AGREGA ESTA LÍNEA */
 }
+
 
 .registro-contenedor h1 {
   color: rgb(31, 75, 47);
@@ -172,6 +175,29 @@ body {
 
 .footer-links a:hover {
   color: #d4ffb2;
+}
+
+.cerrar-x {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgb(255, 71, 71);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cerrar-x:hover {
+  background-color: rgb(180,0,0);
 }
 
 @media (max-width: 480px) {

@@ -17,6 +17,7 @@ require_once "../php_UTrack/base.php";
 
   <main class="registro-main">
     <div class="registro-contenedor">
+      <a href="inicio.php" class="cerrar-x">✖</a>
       <h1>Bienvenido a la familia</h1>
       <h3>Regístrate</h3>
 
