@@ -15,7 +15,6 @@ $id_usuario = $_SESSION['usuario_id'];
 $db = new Base();
 $conn = $db->conectar();
 
-// OJO: la columna correcta es "email"
 $sql = $conn->prepare("SELECT nombre_usuario, email FROM usuarios WHERE id_usuario = ?");
 $sql->execute([$id_usuario]);
 $usuario = $sql->fetch(PDO::FETCH_ASSOC);
@@ -26,29 +25,33 @@ $usuario = $sql->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Editar Perfil</title>
-    <link rel="stylesheet" href="../Creacion_UTrack/perfil.css">
+    <link rel="stylesheet" href="../Creacion_UTrack/editarperfil.css">
 </head>
 
 <body>
 
-<div class="perfil-main">
-    <div class="perfil-card">
+<div class="editar-main">
 
-        <h2 class="perfil-title">Editar Perfil</h2>
+    <div class="editar-card">
+
+        <!-- Botón regresar -->
+        <a href="perfil.php" class="cerrar-x">✖</a>
+
+        <h2 class="editar-title">Editar Perfil</h2>
+        <p class="editar-subtitle">Modifica tu información</p>
 
         <form method="POST" action="../php_UTrack/actualizar_perfil.php">
 
             <label>Nombre:</label>
             <input type="text" name="nombre" value="<?= htmlspecialchars($usuario['nombre_usuario']) ?>" required>
-            <br>
+
             <label>Correo:</label>
             <input type="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>" required>
-            <br>
-            <label>Nueva contraseña (opcional):</label>
-            <input type="password" name="password" placeholder="Déjalo vacío si no cambiarás">
-            <br>
-            <button type="submit" class="boton-guardar">Guardar cambios</button>
 
+            <label>Nueva contraseña (opcional):</label>
+            <input type="password" name="password" placeholder="Déjalo vacío si no deseas cambiarla">
+
+            <button type="submit" class="boton-guardar">Guardar cambios</button>
         </form>
 
     </div>
