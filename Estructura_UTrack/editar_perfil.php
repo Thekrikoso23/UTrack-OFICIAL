@@ -24,25 +24,30 @@ $usuario = $sql->fetch(PDO::FETCH_ASSOC);
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <!-- 🔥 ESTO ES LO QUE FALTABA 🔥 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editar Perfil</title>
   <link rel="stylesheet" href="../Creacion_UTrack/inicio.css" />
 </head>
 
 <body>
-
+ 
   <main class="registro-main">
     <div class="registro-contenedor">
-      
-      <!-- Botón X -->
       <a href="perfil.php" class="cerrar-x">✖</a>
+          <?php if (isset($_GET['error']) && $_GET['error'] === 'correo'): ?>
+            <div class="alerta-error">
+              <span>❌ El correo ya está registrado.</span>
+            </div>
+          <?php endif; ?>
 
-      <!-- Títulos -->
+          <?php if (isset($_GET['success'])): ?>
+            <div class="alerta-exito">
+              <span>✅ Datos actualizados correctamente.</span>
+            </div>
+          <?php endif; ?>
+
       <h1>Editar Perfil</h1>
       <h3>Modifica tu información</h3>
-
-      <!-- Form con las mismas clases que registro -->
       <form class="registro-form" method="POST" action="../php_UTrack/actualizar_perfil.php">
         
         <label for="nombre">Nombre:</label>

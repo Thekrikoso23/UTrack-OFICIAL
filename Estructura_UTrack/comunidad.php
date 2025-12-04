@@ -129,13 +129,13 @@ $posts = $postSQL->fetchAll(PDO::FETCH_ASSOC);
 
 </main>
 
-<footer class="footer">
-  <div class="footer-links">
-    <a href="https://sise.utcj.edu.mx/">SISE</a>
-    <a href="https://facebook.com/SOYUTCJ">Facebook</a>
-    <a href="mailto:contacto@utrack.com">Correo</a>
-  </div>
-</footer>
+ <footer class="footer">
+        <div class="footer-links">
+            <a href="https://sise.utcj.edu.mx/" target="_blank">🌐 SISE UTCJ</a>
+            <a href="https://www.facebook.com/SOYUTCJ" target="_blank">📘 Facebook</a>
+            <a href="mailto:contacto@utrack.com">📧 Correo</a>
+        </div>
+    </footer>
 
 <script>
 function toggleForm(){

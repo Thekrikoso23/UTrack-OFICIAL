@@ -172,18 +172,19 @@ body {
 
 /* FOOTER */
 .footer {
-  background-color: #102B42;
+  background-color: rgb(16,43,66); /* mismo azul que comunidad */
   color: white;
-  padding: 18px;
+  padding: 15px;
+  font-weight: bold;
   text-align: center;
-  margin-top: 55px;
-  font-size: 16px;
+  width: 100%;              /* 🔹 importante para que abarque todo */
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 25px;
+  flex-wrap: wrap;          /* 🔹 esto permite que las ligas bajen en móvil */
 }
 
 .footer-links a {
@@ -199,7 +200,9 @@ body {
   transform: scale(1.1);
 }
 
+
 /* NAVBAR */
+/* NAVBAR — igual al de COMUNIDAD */
 .navbar {
   background-color: rgb(16, 43, 66);
   color: white;
@@ -215,6 +218,12 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
 }
 
 .navbar-links {
@@ -250,6 +259,44 @@ body {
   border-radius: 8px;
 }
 
+/* RESPONSIVE — igual al de comunidad */
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 12px 10px;
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo {
+    height: 55px;
+  }
+
+  .navbar-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links a {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+
+  .Toros {
+    height: 55px;
+    margin-top: 5px;
+  }
+
+}
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
@@ -263,34 +310,5 @@ body {
 
   .content h4 {
     font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    padding: 20px;
-    margin: 25px 10px;
-  }
-
-  .navbar-content {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .navbar-links a {
-    font-size: 15px;
-  }
-
-  .content h1 {
-    font-size: 22px;
-  }
-
-  .content h4 {
-    font-size: 18px;
   }
 }

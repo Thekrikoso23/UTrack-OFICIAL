@@ -97,14 +97,13 @@ $nombre_usuario = $_SESSION['usuario'];
       La clave del éxito está en la disciplina y la constancia.</p>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="https://sise.utcj.edu.mx/">🌐 SISE UTCJ</a>
-      <a href="https://facebook.com/SOYUTCJ">📘 Facebook</a>
-      <a href="mailto:contacto@utrack.com">📧 Correo</a>
-    </div>
-  </footer>
+   <footer class="footer">
+        <div class="footer-links">
+            <a href="https://sise.utcj.edu.mx/" target="_blank">🌐 SISE UTCJ</a>
+            <a href="https://www.facebook.com/SOYUTCJ" target="_blank">📘 Facebook</a>
+            <a href="mailto:contacto@utrack.com">📧 Correo</a>
+        </div>
+    </footer>
 
 </body>
 </html>
