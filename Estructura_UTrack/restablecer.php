@@ -15,6 +15,7 @@ if (!$id_usuario) {
   <meta charset="UTF-8">
   <title>Restablecer contraseña</title>
   <link rel="stylesheet" href="../Creacion_UTrack/inicio.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -24,19 +25,11 @@ if (!$id_usuario) {
 
     <a href="inicio.php" class="cerrar-x">✖</a>
 
-    <h1>Nueva contraseña</h1>
+    <h1>Restablecer contraseña</h1>
     <h3>Ingresa tu nueva contraseña</h3>
 
     <?php if (isset($_SESSION['error_pass'])): ?>
-      <div style="
-        background-color:#ffdddd;
-        padding:12px;
-        margin-bottom:15px;
-        border-left:4px solid red;
-        border-radius:8px;
-        text-align:center;
-        color:#a30000;
-        font-weight:bold;">
+      <div class="alerta-error">
         <?= $_SESSION['error_pass']; ?>
       </div>
       <?php unset($_SESSION['error_pass']); ?>
